@@ -13,13 +13,12 @@
 	<body>
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-12 col-md-8 col-lg-4">
-					<form class="form-signin" action="login.php" method="POST">
-						<h1 class="h3 mb-3 font-weight-normal">Login</h1>
-						<input type="user" id="inputUser" name="user" class="form-control" placeholder="Nutzername" required autofocus />
-						<input type="password" id="inputPassword" name="pass" class="form-control" placeholder="Passwort" required />
-						<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-					</form>
+				<div class="col-12 col-md-8 col-lg-6">
+					<dl>
+						<dt>Nutzername:</dt><dd><?= $_POST['user'] ?></dd>
+						<dt>Passwort:</dt><dd><?= $_POST['pass'] ?></dd>
+						<dt>Hochsicherer Code:</dt><dd><?= hash('md5', $_POST['user'] . '/' . $_POST['pass']) ?></dd>
+					</dl>
 				</div>
 			</div>
 		</div>
